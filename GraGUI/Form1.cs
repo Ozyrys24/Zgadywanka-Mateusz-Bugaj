@@ -31,8 +31,10 @@ namespace GraGUI
             SprawdzButton.Enabled = true;
             textBox_Zgaduj.Enabled = true;
             label_wynik.Text = "";
-            
-
+            try
+            {
+                label_ruchy.Text = g.LicznikRuchow.ToString();
+            } catch { }
         }
 
         private void btnLosuj_Click(object sender, EventArgs e)
@@ -54,7 +56,6 @@ namespace GraGUI
             textBoxDo.Enabled = false;
             btnLosuj.Enabled = false;
             Zgaduj.Visible = true;
-
         }
 
         private void SprawdzButton_Click(object sender, EventArgs e)
@@ -148,8 +149,13 @@ namespace GraGUI
         {
             if(e.KeyCode == Keys.Enter)
             {
-                SprawdzButton_Click(sender,e);
+                SprawdzButton_Click(this, new EventArgs());
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
